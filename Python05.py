@@ -35,10 +35,26 @@ print(Favoritos[coisa_fav]) # Imprime o valor para a chave 'Organismo' a partir 
 
 ## 6
 
+print('Lista de tipos de coisas favoritas:')
+for coisa in Favoritos: # Cria um loop que imprime todas as possiveis coisas favoritas (chaves)
+   print (coisa)
+
+coisa_fav = input('Qual seu tipo de coisa favorita?: ') # Cria um imput que pergunta ao usuario na linha de comando qual seu tipo de coisa favorita, podendo ser qualquer uma das chaves presentes no dicionarios, que foram listadas anteriormente
+print('Sua coisa favorita é: ',Favoritos[coisa_fav]) # Responde com o valor correspondente a chave digitada pelo usuario na linha de comando
+
+## 7
+
+Favoritos['Organismo'] = 'Deinonychus' # Muda o valor da chave 'Organismo' de 'Archaeopteryx' para 'Deinonychus'
+print(Favoritos['Organismo']) #Imprime o novo valor para a chave 'Organismo' do dicionario
+
+## 8
 
 print('Lista de tipos de coisas favoritas:')
 for coisa in Favoritos: # Cria um loop que imprime todas as possiveis coisas favoritas (chaves)
    print (coisa)
 
-coisa_fav = input('Qual seu tipo de coisa favorita? ') # Cria um imput que pergunta ao usuario na linha de comando qual seu tipo de coisa favorita, podendo ser qualquer uma das chaves presentes no dicionarios, que foram listadas anteriormente
-print('Sua coisa favorita é: ',Favoritos[coisa_fav]) # Responde com o valor correspondente a chave digitada pelo usuario na linha de comando
+coisa_fav = input('Qual seu tipo de coisa favorita?: ') # Cria um imput que pergunta ao usuario na linha de comando qual seu tipo de coisa favorita, podendo ser qualquer uma das chaves presentes no dicionarios, que foram listadas anteriormente
+Favoritos[coisa_fav] = input('Qual seu(a) {coisa_fav} Favorito(a): ') # Atribui ao dicionario, na chave escolhina na linha anterior, na variavel 'coisa_fav' um novo valor, a partir de um input do usuario na linha de comando 
+print('Seu(a)', coisa_fav, 'favorito(a) é:', Favoritos[coisa_fav])  # Responde a coisa favorita do usuario, para a chave escolhida por ele
+
+
