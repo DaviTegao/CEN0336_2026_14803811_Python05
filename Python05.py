@@ -25,3 +25,20 @@ print(Favoritos[coisa_fav]) # Imprime o valor para a chave 'Livro' a partir da v
 
 print(Favoritos['Arvore']) #Imprime o valor para a chave 'Arvore' do dicionario
 
+## 5
+
+Favoritos['Organismo'] = 'Archaeopteryx'  # Adiciona uma nova chave e valor ao dicionario, sendo: {'Organismo': 'Archaeopteryx'}
+print(Favoritos) # Imprime o dicionario completo com a nova chave e valor
+
+coisa_fav = 'Organismo'
+print(Favoritos[coisa_fav]) # Imprime o valor para a chave 'Organismo' a partir da variavel 'coisa_fav'
+
+## 6
+
+
+print('Lista de tipos de coisas favoritas:')
+for coisa in Favoritos: # Cria um loop que imprime todas as possiveis coisas favoritas (chaves)
+   print (coisa)
+
+coisa_fav = input('Qual seu tipo de coisa favorita? ') # Cria um imput que pergunta ao usuario na linha de comando qual seu tipo de coisa favorita, podendo ser qualquer uma das chaves presentes no dicionarios, que foram listadas anteriormente
+print('Sua coisa favorita é: ',Favoritos[coisa_fav]) # Responde com o valor correspondente a chave digitada pelo usuario na linha de comando
