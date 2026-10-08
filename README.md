@@ -3,3 +3,5 @@ Repositório para entrega do relatório de Python 5 da disciplina CEN0336
 
 Aluno: Davi Emanuel Tegão
 NºUSP: 14803811
+
+*OBS: As duas contas que fizeram commit no repositório são minhas, as duas estavam conectadas no meu notebook, por isso ficou assim.
