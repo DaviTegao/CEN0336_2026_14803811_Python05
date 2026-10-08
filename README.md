@@ -2,4 +2,4 @@
 Repositório para entrega do relatório de Python 5 da disciplina CEN0336
 
 Aluno: Davi Emanuel Tegão
-NºUSp: 14803811
+NºUSP: 14803811
