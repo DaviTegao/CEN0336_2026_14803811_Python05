@@ -71,7 +71,7 @@ mySet2 = {'ATGCCT'}
 print(mySet)
 print(mySet2)
 
-# A diferença entre as duas sitaxes está na forma em que os elementos são salvos no conjunto, enquanto a mySet2(= {sequencia}) cataloga toda a sequencia de nucleotidios como um unico elemento de dado, a mySet(= set(sequencia)) separa as letras da sequencia individualmente, e adiciona ao conjunto apenas as letras diferentes umas da outras.
+# A diferença entre as duas sintaxes está na forma em que os elementos são salvos no conjunto, enquanto a mySet2(= {sequencia}) cataloga toda a sequencia de nucleotidios como um unico elemento de dado, a mySet(= set(sequencia)) separa as letras da sequencia individualmente, e adiciona ao conjunto apenas as letras diferentes umas da outras.
 
 ## 11
 
@@ -99,3 +99,27 @@ print(SeqA)
 print(SeqB)
 
 # Como visto anteriormente, na pergunta 10, os conjuntos podem ser gerados de duas maneiras diferentes, quando fazemos por (={sequencia}), obtemos um conjunto com apenas um unico elemento, sendo este a sequencia completa, Ja no modelo (=set(sequencia)), obtemos apenas os diferentes elementos presentes na sequencia, sendo {A, C, G, T}. 
+
+## 13
+
+seq = ('GAACTCCAAAAATGAAAACATAGTAGCAATCAAAGCATCCCACTATTTTTTGTCTCTCGTTTCATTAGCGTTGTAAATTACTGATACCCTACTATACCTCTACAAGGCCTTTGTCATCTTTTTACTCAAGTGTGAAATCATCACTTATTGTATGAAGGATGAGCTTTCCGTTCGCTAGTTTGCTGAAAAGGCCTTCTGCAATAAGCTCTCTATTATCTTTAAAAAAACCTGGTTCCTGGTCTTCCATTCTGCTAAAAGCTGTAGGGGTTTTATCACGAGATTCCCGTTGGCATTCTGACTTATTAAAAATGCTTACAGAAGAAATGGATTCTTTAAATGGTCAAATTAATACGTGGACAGATAATAATCCTTTATTAGATGAAATTACGAAGCCATACAGAAAATCTTCAACTCGTTTTTTTCATCCGCTTCTTGTACTTCTAATGTCTAGAGCATCAGTAAATGGGGATCCACCGAGTCAGCAACTATTTCAAAGGTACAAACAACTTGCCCGTGTAACAGAATTGATTCATGCTGCCAATATAATTCATATTAATATTGGAGAAGAACAAAGCAACGAACAGATTAAACTTGCAACGTTGGTTGGAGATTATTTACTCGGAAAGGCGTCTGTTGATTTAGCACATTTAGAAAACAACGCTATTACAGAAATTATGGCTTCTGTTATTGCAAACTTAGTTGAAGGGCACTTCGGAAGCCGACAAAATGGCTCTGTTGGTTTGTCAAACGAACGAACCATCCTTCTGCAATCAGCCTTTATGCCAGCAAAGGCATGTTTATGCGCAAGCATATTGAATAACTCATCACAATACATTAATGATGCGTGTTTCAATTATGGAAAATTTCTAGGCTTATCGCTGCAACTGGCCCATAAGCCTGTATCTCCTGACGCCCAAGTTTTGCAAAAGAATAATGACATTTTGAAAACATATGTTGAGAATGCCAAGAGCTCATTGTCTGTTTTCCCCGATATAGAGGCTAAGCAAGCTCTCATGGAAATCGCTAATAGTGTTTCGAAGTAATCGACAGGTATTGTATCCTGGATTAATATTAGGGTGGCTCATGCATGCTCGTGCAATCGTAACAAATATGTCTTTCTTTTACGAATTTTAACGCTTCAATATAAATCATATTTTTCCTCA')
+seqcon = set(seq)
+print(seqcon) # Imprime o conjunto gerado na linha acima, de moda a apresentar apenas os caracteres unicos da sequencia
+
+count = {} # Gera um dicionario vazio para fazer a contagem
+
+for nt in seq: # Gera um loop de contagem de nucleotidios na sequencia
+   if nt in count: # Caso aquela letra (nucleotidio) ja esta no dicionario)
+      anterior = count[nt] # Verifica o numero atula da contagem para aquele nucleotido no dicionario
+      novo = anterior+1 # Estabelece o novo valor de contagem como o anterior +1
+      count[nt] = novo # Adiciona o novo valor ao dicionario
+   else: # Caso aquele nucleotidio ainda não esteja presente no dicionario
+      count[nt] = 1; # Atribui o valor 1 a contagem deste novo nucleotidio ao dicionario
+
+print(count) # Imprime o dicionario, agora com as contagens
+print('A sequencia de DNA é composta por:', count['A'], 'Adeninas,', count['T'], 'Timinas,', count['C'], 'Citosinas e', count['G'], 'Guaninas')
+gc = count['C'] + count['G']
+total = count['A'] + count['T'] + count['C'] + count['G']
+prop = gc/total*100
+
+print('Na sequencia temos uma quantidade de GC de', gc, ', em um total de', total, 'nucleotídios, com um proporção de', prop, '%')
